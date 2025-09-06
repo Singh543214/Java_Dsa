@@ -1,7 +1,7 @@
 import java.util.*;
 class Node{
     int data;
-    Node next,prev;
+    Node next;
     public Node(int data){
         this.data=data;
         this.next=null;
@@ -9,15 +9,31 @@ class Node{
 }
 public class linkedlist {
     public static void main(String[] args) {
-        Node head =new Node(10);
-        Node second=new Node(20);
-        Node third=new Node(30);
-        head.next=second;
-        second.next=third;
+        Scanner sc =new Scanner(System.in);
+        System.out.print("Enter Size: ");
+        int n=sc.nextInt();
+        Node head=null;
+        for(int i=0;i<n;i++){
+            System.out.print("Enter "+(i+1)+" data: ");
+            int a=sc.nextInt();
+            Node newnode=new Node(a);
+            if(head==null){
+                head=newnode;
+            }
+            else{
+                Node ptr=head;
+                while(ptr.next!=null){
+                    ptr=ptr.next;
+                }
+                ptr.next=newnode;
+            }
+
+        }
         Node x=head;
         while (x!=null) {
-            System.out.println(x.data);
+            System.out.print(x.data+"->");
             x=x.next;
         }
+        System.out.print("NULL");
     }
 }
