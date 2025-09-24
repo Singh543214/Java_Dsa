@@ -15,6 +15,7 @@ class BTree{
         else if(val>root.data) root.right=insert(root.right, val);
         return root;
     }
+   
 
     Tree minval(Tree node){
         Tree curr=node;
@@ -64,6 +65,6 @@ public class BinaryTree {
             tree.root=tree.insert(tree.root, x);
         }
         tree.levelorder(tree.root);
-        System.out.println("Height= "+(tree.height(tree.root)));
+        
     }
 }
